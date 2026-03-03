@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Digital - Violeta Gallardo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- VARIABLES DE DISEÑO --- */
+        :root {
+            --primary-dark: #2c2e35; 
+            --sidebar-bg: #eceae4;   
+            --accent-color: #555;    
+            --text-main: #333;
+            --text-light: #666;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- CONTENEDOR PRINCIPAL --- */
+        .cv-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: var(--white);
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            min-height: 100vh;
+        }
+
+        /* --- CABECERA --- */
+        header {
+            width: 100%;
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 60px;
+            display: flex;
+            align-items: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+            z-index: 2;
+        }
+
+        .header-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            overflow: hidden;
+            margin-right: 30px;
+            background: #444;
+        }
+
+        .header-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        .header-info p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #ccc;
+            letter-spacing: 1px;
+        }
+
+        /* --- COLUMNA IZQUIERDA --- */
+        .sidebar {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--sidebar-bg);
+            padding: 60px 40px 40px 40px;
+        }
+
+        .sidebar-section {
+            margin-bottom: 40px;
+        }
+
+        .sidebar-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            border-bottom: 1px solid #d1cfc8;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .contact-item {
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--primary-dark);
+        }
+
+        .skill-list, .edu-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-dark);
+        }
+
+        /* --- COLUMNA DERECHA --- */
+        .main-content {
+            flex: 2;
+            min-width: 400px;
+            padding: 60px 50px;
+        }
+
+        .content-section {
+            margin-bottom: 50px;
+        }
+
+        .content-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-dark);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        .experience-item {
+            margin-bottom: 30px;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .exp-header h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .exp-desc {
+            font-size: 0.95rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .exp-tasks {
+            padding-left: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .cv-container { margin: 0; }
+            header { 
+                flex-direction: column; 
+                text-align: center; 
+                clip-path: none; 
+                padding: 40px 20px;
+            }
+            .header-img { margin: 0 0 20px 0; }
+            .sidebar, .main-content { flex: 100%; min-width: 100%; }
+        }
+
+        @media print {
+            body { background: white; }
+            .cv-container { box-shadow: none; margin: 0; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        
+        <header>
+            <div class="header-img">
+                <img src="perfil.jpg" alt="Foto de Violeta Gallardo">
+            </div>
+            <div class="header-info">
+                <h1>Violeta Gallardo</h1>
+                <p>Producción de Moda y Eventos</p>
+            </div>
+        </header>
+
+        <aside class="sidebar">
+            
+            <section class="sidebar-section">
+                <h3>Contacto</h3>
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    violetamicaelagallardo@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>Teléfono</strong>
+                    3541-382019
+                </div>
+                <div class="contact-item">
+                    <strong>Instagram</strong>
+                    @vvioleta.gal
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Educación</h3>
+                <div class="contact-item">
+                    <strong>ISDA (2024 - Act.)</strong>
+                    Producción de Moda y Eventos
+                </div>
+                <div class="contact-item">
+                    <strong>ESTUDIO MODAIN (2022-23)</strong>
+                    Diseño de Indumentaria
+                </div>
+                <div class="contact-item">
+                    <strong>Inst. R. de Escalada (2015-20)</strong>
+                    Adm. de Empresas
+                </div>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Habilidades</h3>
+                <ul class="skill-list">
+                    <li>Planificación estratégica</li>
+                    <li>Automatización de flujos de trabajo con IA</li>
+                    <li>Creación de contenido multimedia</li>
+                    <li>Microsoft Word / Excel</li>
+                    <li>Google Docs</li>
+                    <li>Canva</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe InDesign</li>
+                    <li>Photoshop</li>
+                    <li>Programas de edición</li>
+                </ul>
+            </section>
+
+            <section class="sidebar-section">
+                <h3>Referencias</h3>
+                <p style="font-size: 0.9rem;">Marcela Reyna</p>
+                <p style="font-size: 0.9rem;">Julieta Mazzuchelli</p>
+            </section>
+
+        </aside>
+
+        <main class="main-content">
+            
+            <section class="content-section">
+                <h2>Perfil</h2>
+                <p>Tengo 23 años y actualmente soy estudiante de la carrera Producción de Moda y eventos. Cuento con experiencia en atención al público y en tareas de Secretaría. Tengo habilidad para trabajar en equipo, me adapto fácilmente a nuevos entornos y me interesa seguir creciendo profesionalmente.</p>
+            </section>
+
+            <section class="content-section">
+                <h2>Experiencia Laboral</h2>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Estudio Psicopedagógico Julieta Mazzuchelli</h4>
+                        <span class="exp-date">Dic 2024 - Dic 2025</span>
+                    </div>
+                    <ul class="exp-tasks">
+                        <li>Gestión de agenda y atención/recepción.</li>
+                        <li>Organización de documentación, archivos y manejo de bases de datos.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Publicidad de emprendimiento de impresiones 3D</h4>
+                        <span class="exp-date">Actualidad</span>
+                    </div>
+                    <p class="exp-desc">Manejo de redes, diseño de flyers de publicidad y armado de catálogo de ventas y productos.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Producción de fotos (Agencia Levels Models)</h4>
+                        <span class="exp-date">Actualidad</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Producción de foto de moda (Lecrab y Joyas de autor)</h4>
+                        <span class="exp-date">Actualidad</span>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Producción y estilismo (Lecrab)</h4>
+                        <span class="exp-date">Sept 2024 - Nov 2024</span>
+                    </div>
+                    <p class="exp-desc">Proyecto para la facultad: Armado de desfile de moda y producción de fotografía.</p>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <h4>Despensa</h4>
+                        <span class="exp-date">2020 - 2024</span>
+                    </div>
+                    <ul class="exp-tasks">
+                        <li>Atención al público y gestión de caja (efectivo, tarjetas, transferencias).</li>
+                        <li>Organización de stock, pedidos a proveedores y supervisión de personal.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Cursos y Formación</h2>
+                <div class="experience-item">
+                    <p>• <strong>Curso CM y Marketing Digital</strong> (Open Academy Santander) - 2025</p>
+                    <p>• <strong>Publicidad Digital</strong> (Domestika) - 2025</p>
+                    <p>• <strong>Charla de dirección de arte e historia de la moda</strong> (UP) - 2024</p>
+                    <p>• <strong>Introducción a la producción de moda</strong> (Julieta Ortega) - 2024</p>
+                    <p>• <strong>Asesoría de imagen</strong> (ESTUDIO MODAIN) - 2023</p>
+                    <p>• <strong>Proceso de diseño y asesoría de imagen / la moda</strong> (DOMESTIKA) - 2023</p>
+                    <p>• <strong>Introducción al diseño de indumentaria</strong> (ESTUDIO MODAIN) - 2021</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
